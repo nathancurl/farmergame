@@ -8,35 +8,27 @@ public class MazePanel extends JPanel {
     // takes a in[][] as an arugment. Draws the maze in a JPanel
     // the JPanel hold a Player (image) that moves through the maze, but can't go through walls
 
-    int money;
-    int winMoney = 50;
 
-    private int[][] mazeRep = {
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-            {2, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
-            {1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1},
-            {1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1},
-            {1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1},
-            {1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1},
-            {1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1},
-            {1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1},
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3},
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-
-    };
+    private int[][] mazeRep;
     /*
-          {
-      {1,1,1,1,1},
-      {1,2,0,1,1},
-      {1,0,0,0,1},
-      {1,0,1,3,1},
-      {1,1,1,1,1}
-      };
-  /*
-  in the mazeRep; 0==open space 1 == wall , 2 = start, 3 = end point
-   */
-    private int xD = mazeRep[0].length;
-    private int yD = mazeRep.length;
+        {
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {2, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1},
+                {1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1},
+                {1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1},
+                {1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1},
+                {1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+
+        };
+
+      /*in the mazeRep; 0==open space 1 == wall , 2 = start, 3 = end point
+       */
+    private int xD;
+    private int yD;
 
 
     //the index position of the player and the the end points in the matrix
@@ -45,8 +37,11 @@ public class MazePanel extends JPanel {
     int endRow;
     int endCol;
 
-    public void setMoney(int money) {
-        this.money = money;
+    public MazePanel(int[][] mazeRep) {
+        this.mazeRep = mazeRep;
+        this.xD = mazeRep[0].length;
+        this.yD = mazeRep.length;
+
     }
 
     @Override
@@ -101,7 +96,7 @@ public class MazePanel extends JPanel {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow - 1][curCol] = 2;
                         curRow--;
-                    } else if (mazeRep[curRow - 1][curCol] == 3 && money > winMoney) {
+                    } else if (mazeRep[curRow - 1][curCol] == 3) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow - 1][curCol] = 2;
                         curRow--;
@@ -114,7 +109,7 @@ public class MazePanel extends JPanel {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow][curCol - 1] = 2;
                         curCol--;
-                    } else if (mazeRep[curRow][curCol - 1] == 3 && money > winMoney) {
+                    } else if (mazeRep[curRow][curCol - 1] == 3) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow][curCol - 1] = 2;
                         curCol--;
@@ -126,7 +121,7 @@ public class MazePanel extends JPanel {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow + 1][curCol] = 2;
                         curRow++;
-                    } else if (mazeRep[curRow + 1][curCol] == 3 && money > winMoney) {
+                    } else if (mazeRep[curRow + 1][curCol] == 3 ) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow + 1][curCol] = 2;
                         curRow++;
@@ -138,7 +133,7 @@ public class MazePanel extends JPanel {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow][curCol + 1] = 2;
                         curCol++;
-                    } else if (mazeRep[curRow][curCol + 1] == 3 && money > winMoney) {
+                    } else if (mazeRep[curRow][curCol + 1] == 3 ) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow][curCol + 1] = 2;
                         curCol++;
@@ -177,4 +172,3 @@ public class MazePanel extends JPanel {
     }
 
 }
-

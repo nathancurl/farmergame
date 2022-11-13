@@ -20,9 +20,12 @@ public class MazeWindow {
         top.setBackground(Color.LIGHT_GRAY);
         gWindow.add(top, BorderLayout.NORTH);
 
+        //autogenerate a maze
+        MazeMaker maker = new MazeMaker();
+
         // create the game panel
-        MazePanel maze = new MazePanel();
-        maze.setMoney(100);
+        MazePanel maze = new MazePanel(maker.runMaker(20,40));
+        
         maze.setBackground(Color.GRAY);
         gWindow.add(maze, BorderLayout.CENTER);
 
