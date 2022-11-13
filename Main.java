@@ -7,12 +7,9 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                //GameWindow holds the MazePanel and has buttons for start and stop
-                GameWindow game = new GameWindow();
-                    //call the MazeMaker class todo create a maze in Array form
-                    //scall the MazePanel class todo the real gameplaysd
-                //update the amount of money in the overarching player class.
-
+                ButtonGrid1 bg1 = new ButtonGrid1 (5,5);//runs the light game
+                ButtonGrid2 bg2 = new ButtonGrid2(3,3);//runs the memory game
+                GameWindow game = new GameWindow(); //runs the maze game
             }
         });
     }
