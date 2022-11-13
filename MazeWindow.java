@@ -4,11 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Timer;
 
-public class GameWindow {
+public class MazeWindow {
     //This class will hold a JFrame that holds all other  Jcomponents (MazePanel, JButtons)
     // will call the run() method from Mazel Panel
 
-    public GameWindow() {
+    public MazeWindow() {
         //todo set all the important window features
             //setSIze, close funciton...
         //setup the frame
