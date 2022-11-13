@@ -78,8 +78,6 @@ public class MazePanel extends JPanel {
     public void runMaze() {
 
 
-        
-
         //create the movement and win/lose things
         KeyListener key = new KeyListener() {
             @Override
