@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 public class ButtonGrid2 {
     int width;
     int height;
+    boolean start = true;
     boolean win = false;
 
     boolean lose = false;

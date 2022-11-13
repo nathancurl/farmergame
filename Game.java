@@ -1,4 +1,3 @@
-package package01;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

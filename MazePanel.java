@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Timer;
+
 
 public class MazePanel extends JPanel {
     // takes a in[][] as an arugment. Draws the maze in a JPanel
@@ -78,9 +78,7 @@ public class MazePanel extends JPanel {
     public void runMaze() {
 
 
-        //todo create a time that indicated how long you have to complete the maze
-        long time = System.currentTimeMillis();
-        long end = time+15000;
+        
 
         //create the movement and win/lose things
         KeyListener key = new KeyListener() {

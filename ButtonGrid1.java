@@ -1,7 +1,10 @@
-import javax.swing.*;
-import java.awt.GridLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.UIManager;
 
 
 public class ButtonGrid1 {

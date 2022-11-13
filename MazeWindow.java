@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
 
 public class MazeWindow {
     //This class will hold a JFrame that holds all other  Jcomponents (MazePanel, JButtons)
@@ -24,7 +23,7 @@ public class MazeWindow {
         MazeMaker maker = new MazeMaker();
 
         // create the game panel
-        MazePanel maze = new MazePanel(maker.runMaker(20,40));
+        MazePanel maze = new MazePanel(maker.runMaker(10,10));
         
         maze.setBackground(Color.GRAY);
         gWindow.add(maze, BorderLayout.CENTER);

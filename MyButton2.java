@@ -27,6 +27,10 @@ public class MyButton2 extends JButton {
                 new Thread() {
                     public void run() {
                         MyButton2 sourceBtn = (MyButton2) e.getSource();
+                        if (sourceBtn.source.start){
+                            sourceBtn.source.order[0].lightUp(Color.PINK);
+                            sourceBtn.source.start = false;
+                        } else{
                         if (sourceBtn.source.win || sourceBtn.source.lose){sourceBtn.source.frame.dispose();}
                         if (sourceBtn.source.currSpot<sourceBtn.source.current.length-1) {
                             sourceBtn.source.currSpot++;
@@ -52,6 +56,7 @@ public class MyButton2 extends JButton {
                             }
                         }else{ ButtonGrid2.youWin(sourceBtn.source); sourceBtn.source.win = true;}
                     }
+                }
                 }.start();
             }
         });
