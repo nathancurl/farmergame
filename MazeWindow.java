@@ -10,7 +10,11 @@ public class MazeWindow {
     private int sizeY;
 
 
-    public void startMG(int money){
+    public void startMG(int money, JButton btn){
+        //hide the button on the main screen
+        btn.setVisible(false);
+
+
         //todo set all the important window features
             //setSIze, close funciton...
         //setup the frame
@@ -23,15 +27,15 @@ public class MazeWindow {
         gWindow.add(top, BorderLayout.NORTH);
 
         //decide the size of the maze based of money
-        if (money < 100){
+        if (money < 200){
             sizeX = 50;
             sizeY = 50;
-        }else if(money>= 100 && money <= 300){
+        }else if(money>= 300 && money <= 400){
             sizeX = 30;
             sizeY = 30;
-        }else if (money > 300){
-            sizeX = 20;
-            sizeY = 20;
+        }else if (money > 400){
+            sizeX = 15;
+            sizeY = 15;
         }
 
 
@@ -39,7 +43,7 @@ public class MazeWindow {
         MazeMaker maker = new MazeMaker();
 
         // create the game panel
-        MazePanel maze = new MazePanel(maker.runMaker(sizeX,sizeY));
+        MazePanel maze = new MazePanel(maker.runMaker(sizeX,sizeY), btn);
         
         maze.setBackground(Color.GRAY);
         gWindow.add(maze, BorderLayout.CENTER);
