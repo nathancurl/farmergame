@@ -87,7 +87,7 @@ public class MazePanel extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_W) { //move up
-                    System.out.println("w");
+                    //System.out.println("w");
                     if (mazeRep[curRow - 1][curCol] == 0) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow - 1][curCol] = 2;
@@ -100,7 +100,7 @@ public class MazePanel extends JPanel {
                     repaint();
 
                 } else if (e.getKeyCode() == KeyEvent.VK_A) { //move left
-                    System.out.println("a");
+                    //System.out.println("a");
                     if (mazeRep[curRow][curCol - 1] == 0) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow][curCol - 1] = 2;
@@ -112,7 +112,7 @@ public class MazePanel extends JPanel {
                     }
                     repaint();
                 } else if (e.getKeyCode() == KeyEvent.VK_S) { // move down
-                    System.out.println("s");
+                    //System.out.println("s");
                     if (mazeRep[curRow + 1][curCol] == 0) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow + 1][curCol] = 2;
@@ -124,7 +124,7 @@ public class MazePanel extends JPanel {
                     }
                     repaint();
                 } else if (e.getKeyCode() == KeyEvent.VK_D) { // move right
-                    System.out.println("d");
+                    //System.out.println("d");
                     if (mazeRep[curRow][curCol + 1] == 0) {
                         mazeRep[curRow][curCol] = 0;
                         mazeRep[curRow][curCol + 1] = 2;

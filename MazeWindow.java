@@ -29,7 +29,7 @@ public class MazeWindow {
         gWindow.add(maze, BorderLayout.CENTER);
 
         //start button things
-        JButton start = new JButton("Start");
+        JButton start = new JButton("Start : WASD keys to move");
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
