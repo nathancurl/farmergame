@@ -7,7 +7,7 @@ public class MazeWindow {
     //This class will hold a JFrame that holds all other  Jcomponents (MazePanel, JButtons)
     // will call the run() method from Mazel Panel
 
-    public MazeWindow() {
+    public void startMG(){
         //todo set all the important window features
             //setSIze, close funciton...
         //setup the frame
@@ -40,7 +40,6 @@ public class MazeWindow {
 
         top.add(start);
         gWindow.setVisible(true);
-
 
     }
 }

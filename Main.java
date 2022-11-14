@@ -65,11 +65,14 @@ public class Main {
                     System.out.println(loser);
                     System.exit(0);
                 }
-                    //run George's game
-                  //MazeWindow game = new MazeWindow(); //runs the maze game
-                
 
-                
+                    //run George's game
+                   //MazeWindow game = new MazeWindow(); //runs the maze game
+                   //game.startMG();
+                   
+                   //somehow wait till maze things are finished before the next print starts
+                  
+ 
                 System.out.println("You made it to the Alien's home. You must fight to get Milo back.\n" +
                 "Please use all of your wits and farming skills to defeat the boss! Good luck!\n" +
                 "*type y to start battle");
