@@ -138,8 +138,10 @@ public class MazePanel extends JPanel {
                     repaint();
                 }
                 if (endCol == curCol && endRow == curRow) {
-                    System.out.println("congrats");
-                    System.exit(0);
+                    //System.out.println("congrats");
+                    //System.exit(0);
+                    end();
+    
                 }
             }
 
@@ -167,4 +169,8 @@ public class MazePanel extends JPanel {
         //System.out.println(mazeRep[curRow][curCol]);
     }
 
+
+    private void end(){
+        SwingUtilities.getWindowAncestor(this).dispose();
+    }
 }

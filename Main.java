@@ -66,11 +66,10 @@ public class Main {
                     System.exit(0);
                 }
                     //run George's game
-                    //MazeWindow game = new MazeWindow(); //runs the maze game
-
+                  //MazeWindow game = new MazeWindow(); //runs the maze game
+                
 
                 
- 
                 System.out.println("You made it to the Alien's home. You must fight to get Milo back.\n" +
                 "Please use all of your wits and farming skills to defeat the boss! Good luck!\n" +
                 "*type y to start battle");
@@ -86,7 +85,7 @@ public class Main {
                 
                 
                 System.out.println("Congrats! You saved Milo. Time to return home and live off your days happy.");
-
+/* */
                 gameScanner.close();
 
                         
