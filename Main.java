@@ -33,7 +33,7 @@ public class Main {
                 if(curProgess ==2){
                     //run nathan's game
 
-                    ben.setMoney(500);
+                    ben.setMoney(500); //use this to export the money from nathan's game
                 }else if(curProgess ==3){
                     //run blanche's game
                     //ButtonGrid1 bg1 = new ButtonGrid1 (3,3,next);//runs the light game
@@ -45,8 +45,9 @@ public class Main {
 
                 }else if(curProgess ==5){
                     //run prim's game
-                    Game boss = new Game();
+                    Game boss = new Game(); 
                     sWindow.dispose();
+
                 }
 
 
