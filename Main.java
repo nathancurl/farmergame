@@ -13,7 +13,7 @@ public class Main {
     String level4 = "boss battle";
     String end = " thanks for playing";
 
-        String[] story = {level1,level2,level3,level4,end};
+    String[] story = {level1,level2,level3,level4,end};
     public Main() {
 
         //setup the frame
