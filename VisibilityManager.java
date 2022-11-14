@@ -21,11 +21,12 @@ public class VisibilityManager {
     }
 
     public void titleToBattle(){
-        ui.titleNamePanel.setVisible(false);
-        ui.startButtonPanel.setVisible(false);
+        ui.window.remove(ui.titleNamePanel);
+        ui.window.remove(ui.startButtonPanel);
 
         // hide the game screen stuff
         ui.mainTextPanel.setVisible(true);
+        ui.window.add(ui.choiceButtonPanel);
         ui.choiceButtonPanel.setVisible(true);
         ui.playerPanel.setVisible(true);
     }

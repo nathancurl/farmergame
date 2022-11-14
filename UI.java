@@ -66,7 +66,6 @@ public class UI {
         choiceButtonPanel.setBounds(250, 350, 300, 150);
         choiceButtonPanel.setBackground(black);
         choiceButtonPanel.setLayout(new GridLayout(2, 1));
-        window.add(choiceButtonPanel);
 
         choice1 = new JButton("choice 1");
         choice1.setBackground(black);
