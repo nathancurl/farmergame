@@ -8,14 +8,14 @@ public class MazeMaker {
     /*
     Genreral Algorithm
        create a nxn int[][]
-       0==path 1 == wall , 2 == start, 3 = end point, 4 == empty
+       0==path 1 == wall , 2 == start, 3 == end point, 4 == empty
        set up the array: all the outermost edges need to be walls for preventing out of bounds exceptions later
        The inside will be a grid of emptys separated by walls.
 
 
        1.pick a starting point, make it a 4
        2. randomly pick one of its neighbors that's a 4 (these will be separated by wall)
-       3. go to the neighbor. make it and the wall between them a 4.
+       3. go to the neighbor. make it and the wall between them a 0.
        4. repeat 3 until the current spot has no neighbors. (mark as a potential end point)
        5. backtrack until you get to a spot with still empty neighbors
        6. repeat 2-5 until all empty spots are gone.

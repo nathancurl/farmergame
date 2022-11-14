@@ -6,8 +6,11 @@ import java.awt.event.ActionListener;
 public class MazeWindow {
     //This class will hold a JFrame that holds all other  Jcomponents (MazePanel, JButtons)
     // will call the run() method from Mazel Panel
+    private int sizeX;
+    private int sizeY;
 
-    public void startMG(){
+
+    public void startMG(int money){
         //todo set all the important window features
             //setSIze, close funciton...
         //setup the frame
@@ -19,11 +22,24 @@ public class MazeWindow {
         top.setBackground(Color.LIGHT_GRAY);
         gWindow.add(top, BorderLayout.NORTH);
 
+        //decide the size of the maze based of money
+        if (money < 100){
+            sizeX = 50;
+            sizeY = 50;
+        }else if(money>= 100 && money <= 300){
+            sizeX = 30;
+            sizeY = 30;
+        }else if (money > 300){
+            sizeX = 20;
+            sizeY = 20;
+        }
+
+
         //autogenerate a maze
         MazeMaker maker = new MazeMaker();
 
         // create the game panel
-        MazePanel maze = new MazePanel(maker.runMaker(10,10));
+        MazePanel maze = new MazePanel(maker.runMaker(sizeX,sizeY));
         
         maze.setBackground(Color.GRAY);
         gWindow.add(maze, BorderLayout.CENTER);
