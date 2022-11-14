@@ -144,9 +144,13 @@ public class Story {
         game.nextPosition1 = "winscreen";
     }
     public void winScreen(){
+        ui.window.add(ui.titleNamePanel);
         ui.choiceButtonPanel.setVisible(false);
         ui.titleNameLabel.setText("YOU WIN!");
+        ui.mainTextArea.setText("");
         ui.titleNamePanel.setVisible(true);
+        ui.mainTextPanel.setVisible(false);
+        ui.window.remove(ui.mainTextPanel);
 
     }
     public void lose(){
@@ -158,9 +162,14 @@ public class Story {
     }
 
     public void loseScreen(){
+        ui.window.add(ui.titleNamePanel);
+        ui.mainTextArea.setText("");
+        ui.mainTextPanel.setVisible(false);
+        ui.window.remove(ui.mainTextPanel);
         ui.titleNameLabel.setText("GAMEOVER");
         ui.titleNamePanel.setVisible(true);
         ui.choiceButtonPanel.setVisible(false);
+
 
     }
 
