@@ -1,3 +1,4 @@
+package package02;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,9 +7,9 @@ import static java.awt.Color.*;
 
 public class sUI{
     JFrame window;
-    JPanel titleNamePanel, startButtonPanel, mainTextPanel;
+    JPanel titleNamePanel, startButtonPanel, mainTextPanel, nextButtonPanel;
     JLabel titleNameLabel;
-    JButton startButton;
+    JButton startButton, nextButton;
     JTextArea mainTextArea;
     Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
@@ -17,7 +18,7 @@ public class sUI{
         window = new JFrame();
         window.setSize(800,600);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        Color tan = new Color(210, 180, 140);
+        Color tan = new Color(208, 178, 121);
         window.getContentPane().setBackground(tan);
         window.setLayout(null);
 
@@ -48,12 +49,13 @@ public class sUI{
 
         //game screen
         mainTextPanel = new JPanel();
-        mainTextPanel.setBounds(100, 100, 600, 250);
+        mainTextPanel.setBounds(100, 300, 600, 250);
         mainTextPanel.setBackground(tan);
+
         window.add(mainTextPanel);
 
-        mainTextArea = new JTextArea("???");
-        mainTextArea.setBounds(100, 100, 600, 250);
+        mainTextArea = new JTextArea("STORYLINE");
+        mainTextArea.setBounds(100, 300, 600, 250);
         mainTextArea.setBackground(tan);
         mainTextArea.setForeground(white);
         mainTextArea.setFont(normalFont);
@@ -61,6 +63,20 @@ public class sUI{
         mainTextArea.setWrapStyleWord(true);
         mainTextArea.setEditable(false);
         mainTextPanel.add(mainTextArea);
+
+        nextButtonPanel = new JPanel();
+        nextButtonPanel.setBounds(625, 500, 200, 100);
+        nextButtonPanel.setBackground(tan);
+        window.add(nextButtonPanel);
+
+        nextButton = new JButton(">");
+        nextButton.setForeground(black);
+        nextButton.setFont(normalFont);
+        nextButton.setFocusPainted(false);
+        nextButton.addActionListener(cHandler);
+        nextButton.setActionCommand("next");
+        nextButtonPanel.add(nextButton);
+
 
     }
 }

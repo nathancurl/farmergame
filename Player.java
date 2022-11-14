@@ -1,3 +1,4 @@
+package package01;
 
 import java.util.Random;
 
@@ -7,8 +8,8 @@ public class Player extends Fight {
     public String movement;
 
 
-    public Player(String name) {
-        super(name, "Pitchfork", "Apple", "Plow");
+    public Player() {
+        super();
         this.health = 100;
     }
     public void three(Fight agent2) {
@@ -16,8 +17,8 @@ public class Player extends Fight {
         if (percentage > 7) {
             movement = "You threw your pitchfork. You missed.";
         } else {
-            movement = "You threw your pitchfork. You hit your opponent! Your opponent took 15 damage.";
-            agent2.takeDamage(15);
+            movement = "You threw your pitchfork. You hit your opponent! Your opponent took " + Math.round(health * 0.3) + " damage.";
+            agent2.takeDamage(Math.round(health* 0.3));
             }
     }
 

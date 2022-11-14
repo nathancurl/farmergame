@@ -1,3 +1,4 @@
+package package01;
 
 import javax.swing.*;
 import java.awt.*;
@@ -5,8 +6,8 @@ import static java.awt.Color.*;
 
 public class UI {
     JFrame window;
-    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel;
-    JLabel titleNameLabel, hpLabel, hpNumberLabel, bossHPLabel, bossHPNumLabel;
+    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, titleGamePanel;
+    JLabel titleNameLabel, hpLabel, hpNumberLabel, bossHPLabel, bossHPNumLabel,titleGameLabel;
     JButton startButton, choice1, choice2;
 
     JTextArea mainTextArea;
