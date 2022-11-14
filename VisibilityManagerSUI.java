@@ -1,3 +1,6 @@
+package package02;
+
+import java.awt.*;
 
 public class VisibilityManagerSUI{
 
@@ -12,6 +15,7 @@ public class VisibilityManagerSUI{
         sui.startButtonPanel.setVisible(true);
 
         sui.mainTextPanel.setVisible(false);
+        sui.nextButtonPanel.setVisible(false);
     }
 
     public void story(){
@@ -19,6 +23,7 @@ public class VisibilityManagerSUI{
         sui.startButtonPanel.setVisible(false);
 
         sui.mainTextPanel.setVisible(true);
+        sui.nextButtonPanel.setVisible(true);
 
     }
 }

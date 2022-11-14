@@ -1,3 +1,4 @@
+package package02;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +7,8 @@ public class storyLineGui {
     sUI sui = new sUI();
     ChoiceHandler choiceHandler = new ChoiceHandler();
     VisibilityManagerSUI vm = new VisibilityManagerSUI(sui);
+    storyLine sl = new storyLine(this, sui, vm);
+    String nextPosition;
 
     public static void main(String[] args) {
         new storyLineGui();
@@ -19,9 +22,8 @@ public class storyLineGui {
         public void actionPerformed(ActionEvent event) {
             String yourChoice = event.getActionCommand();
             switch (yourChoice) {
-                case "start":
-                    vm.story();
-                    break;
+                case "start": vm.story(); break;
+                case "next": sl.selectPosition(nextPosition);break;
             }
 
         }
