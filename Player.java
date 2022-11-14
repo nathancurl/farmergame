@@ -31,9 +31,13 @@ public class Player extends Fight {
             movement = "You take an apple out of your inventory. \nYour opponent knocked it out.";
         }
     }
-
-
-
+    
+    public int getMoney() {
+        return money;
+    }
+    public void setMoney(int money) {
+        this.money = money;
+    }
 
 
 }

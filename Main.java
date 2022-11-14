@@ -15,6 +15,7 @@ public class Main {
 
     String[] story = {level1,level2,level3,level4,end};
     public Main() {
+        Player ben = new Player();
 
         //setup the frame
         JFrame sWindow = new JFrame("Farmer Ben Main Story");
@@ -31,16 +32,21 @@ public class Main {
                 curProgess++;
                 if(curProgess ==2){
                     //run nathan's game
+
+                    ben.setMoney(500);
                 }else if(curProgess ==3){
                     //run blanche's game
+                    //ButtonGrid1 bg1 = new ButtonGrid1 (3,3,next);//runs the light game
+                    ButtonGrid2 bg2 = new ButtonGrid2(3,3);//runs the memory game
                 }else if(curProgess ==4){
                     //run george's game
                     MazeWindow maze = new MazeWindow();
-                    maze.startMG(500, next);
+                    maze.startMG(ben.getMoney(), next);
 
                 }else if(curProgess ==5){
                     //run prim's game
                     Game boss = new Game();
+                    sWindow.dispose();
                 }
 
 

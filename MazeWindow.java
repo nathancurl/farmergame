@@ -34,8 +34,8 @@ public class MazeWindow {
             sizeX = 30;
             sizeY = 30;
         }else if (money > 400){
-            sizeX = 5;
-            sizeY = 5;
+            sizeX = 15;
+            sizeY = 15;
         }
 
 
