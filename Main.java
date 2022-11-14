@@ -10,7 +10,7 @@ public class Main {
             public void run() {
 
                 //create a player that so all the games can have the same player
-                Player Ben = new Player("BEN");
+                Player Ben = new Player();
 
                 String loser = "I guess you don't love your son enough to save him. :(";
                 String user;
