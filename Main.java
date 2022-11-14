@@ -9,9 +9,12 @@ public class Main {
             @Override
             public void run() {
 
+                //create a player that so all the games can have the same player
+                Player Ben = new Player("BEN");
+
                 String loser = "I guess you don't love your son enough to save him. :(";
                 String user;
-                // start the storyline gui
+                // start the storyline:
                 Scanner gameScanner = new Scanner(System.in);
                 
                 System.out.println("Hello and welcome Farmer Ben. You are a Farmer and as such you must do farmer things ...\n" +
