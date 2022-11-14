@@ -1,3 +1,4 @@
+package package01;
 
 import java.util.Random;
 
@@ -5,7 +6,7 @@ public class Story {
     Game game;
     UI ui;
     VisibilityManager vm;
-    Player player = new Player("Farmer Ben");
+    Player player = new Player();
     Boss boss = new Boss();
     Random rand = new Random();
 
@@ -26,34 +27,15 @@ public class Story {
 
     public void selectPosition(String nextPosition) {
         switch (nextPosition) {
-            case "pitchfork":
-                pitchfork();
-                break;
-            case "apple":
-                apple();
-                break;
-//            case "plow":
-//                plow();
-//                break;
-            case "fight":
-                battleScene();
-                break;
-            case "win":
-                win();
-                break;
-            case "lose":
-                lose();
-                break;
-            case "toTitle":
-                toTitle();
-                break;
-            case "bossAttack":
-                bossAttack();
-                break;
-            case "battleScene2":
-                battleScene2();
-                break;
-
+            case "pitchfork" -> pitchfork();
+            case "apple" -> apple();
+            case "fight" -> battleScene();
+            case "win" -> win();
+            case "lose" -> lose();
+            case "bossAttack" -> bossAttack();
+            case "battleScene2" -> battleScene2();
+            case "winscreen" -> winScreen();
+            case "losescreen" -> loseScreen();
         }
     }
 
@@ -116,27 +98,6 @@ public class Story {
         }
     }
 
-//    public void plow() {
-//        player.takeTurn(2, boss);
-//        ui.mainTextArea.setText(player.movement);
-//        ui.bossHPNumLabel.setText("" + boss.health);
-//
-//        ui.choice1.setText(">");
-//        ui.choice2.setText("");
-//        ui.choice3.setText("");
-//
-//        if (boss.health > 0) {
-//            game.nextPosition1 = "bossAttack";
-//            game.nextPosition2 = "";
-//            game.nextPosition3 = "";
-//
-//        } else if (boss.health < 1) {
-//            game.nextPosition1 = "win";
-//            game.nextPosition2 = "";
-//            game.nextPosition3 = "";
-//        }
-//    }
-
     public void bossAttack() {
 
         int num = rand.nextInt(2);
@@ -148,7 +109,7 @@ public class Story {
             ui.bossHPNumLabel.setText("" + boss.health);
 
 
-        } else if (num == 1) {
+        } else {
             boss.takeTurn(num, player);
             ui.mainTextArea.setText(boss.movement);
             ui.hpNumberLabel.setText("" + player.health);
@@ -176,24 +137,31 @@ public class Story {
     }
     public void win(){
         ui.mainTextArea.setText("You've defeated the boss! You got Milo back!");
-        ui.choice1.setText("To the Title Screen");
-        ui.choice2.setText("");
+        ui.choiceButtonPanel.setVisible(true);
+        ui.playerPanel.setVisible(false);
+        ui.choice1.setText(">");
 
-        game.nextPosition1 = "toTitle";
-        game.nextPosition2 = "";
+        game.nextPosition1 = "winscreen";
+    }
+    public void winScreen(){
+        ui.choiceButtonPanel.setVisible(false);
+        ui.titleNameLabel.setText("YOU WIN!");
+        ui.titleNamePanel.setVisible(true);
+
     }
     public void lose(){
-        ui.mainTextArea.setText("So close, but so far. \n" +
-                "GAME OVER");
+        ui.mainTextArea.setText("So close, but so far...");
+        ui.playerPanel.setVisible(false);
+        ui.choice1.setText(">");
 
-        ui.choice1.setText("To the Title Screen");
-        ui.choice2.setText("");
+        game.nextPosition1 = "losescreen";
+    }
 
-        game.nextPosition1 = "toTitle";
-        game.nextPosition2 = "";
+    public void loseScreen(){
+        ui.titleNameLabel.setText("GAMEOVER");
+        ui.titleNamePanel.setVisible(true);
+        ui.choiceButtonPanel.setVisible(false);
+
     }
-    public void toTitle(){
-        defaultSetup();
-        vm.showTitleScreen();
-    }
+
 }
