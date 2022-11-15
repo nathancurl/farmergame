@@ -1,3 +1,4 @@
+package package01;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,14 +7,15 @@ public class Game {
     UI ui = new UI();
     ChoiceHandler choiceHandler = new ChoiceHandler();
     VisibilityManager vm = new VisibilityManager(ui);
-    Story story = new Story(this, ui, vm);
+    Story story;
 
     String nextPosition1, nextPosition2;
 
     public static void main(String[] args) {
-        new Game();
+        //new Game();
     }
-    public Game(){
+    public Game(Player player){
+        new Story(this, ui, vm, player);
         ui.createUI(choiceHandler);
         story.defaultSetup();
         vm.showTitleScreen();

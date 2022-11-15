@@ -1,9 +1,10 @@
+package package01;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeUnit;
 
 public abstract class Fight {
-    protected long health;
+    protected long health = 100;
 
     public Fight() {
     }
