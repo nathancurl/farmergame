@@ -19,6 +19,7 @@ public class ButtonGrid1 {
         this.width = width;
         this.height = length;
         this.button = button;
+        button.setVisible(false);
         try{
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         }catch(Exception e){
@@ -71,7 +72,8 @@ public class ButtonGrid1 {
                 b2.repaint();
             }
         }
-        this.frame.dispose();
+        bg.frame.dispose();
+        bg.button.setVisible(true);
     }
 
     public static void main(String[] args) {

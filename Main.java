@@ -36,8 +36,8 @@ public class Main {
                     ben.setMoney(500); //use this to export the money from nathan's game
                 }else if(curProgess ==3){
                     //run blanche's game
-                    //ButtonGrid1 bg1 = new ButtonGrid1 (3,3,next);//runs the light game
-                    ButtonGrid2 bg2 = new ButtonGrid2(3,3);//runs the memory game
+                    ButtonGrid1 bg1 = new ButtonGrid1 (3,3,next);//runs the light game
+                    ButtonGrid2 bg2 = new ButtonGrid2(3,3,ben);//runs the memory game
                 }else if(curProgess ==4){
                     //run george's game
                     MazeWindow maze = new MazeWindow();
