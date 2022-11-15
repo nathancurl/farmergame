@@ -11,6 +11,7 @@ import static java.awt.Color.white;
 
 public class buttonPanel extends farmerGame {
     int curDay;
+    private int money;
     buttonPanel(int curDay_) {
         JFrame f = new JFrame("Pick your crop");
         curDay = curDay_;
@@ -110,6 +111,23 @@ public class buttonPanel extends farmerGame {
         Basil.setEditable(false);
         f.add(basilButton);
         f.add(Basil);
+
+        JButton finishButton = new JButton();
+        finishButton.setBounds(450, 900, 150, 100);
+        Textfield Finish;
+        Finish = new TextField("Finish");
+        Finish.setFont(normalFont);
+        Finish.setBounds(515,1100,150,50);
+        Finish.setBackground(black);
+        Finish.setBackground(white);
+        Finish.setText("Finish");
+        Finish.setEditable(false);
+        Finish.setVisible(true);
+        finishButton.setVisible(true);
+        f.add(finishButton);
+        f.add(Finish);
+
+
 
         f.setSize(600, 1400);
         f.setBounds(1200, 0, 600, 1400);

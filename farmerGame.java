@@ -2,15 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-import static java.awt.Color.black;
-import static java.awt.Color.white;
-
 //import java.util.ArrayList;
 //
 public class farmerGame {
         Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
         int curDay = 5;
-        int money = 0;
+        int money;
         String[] crops;{
                 crops = new String[3];
                 crops[0] = "Corn";
@@ -39,7 +36,7 @@ public class farmerGame {
         public void pickPlant() {
 //        //Questions for this method: How do I turn a user click into the correct string being sent to checkPrice()?
 //        //GUI pops up
-                new buttonPanel(5);
+                
 //        //User clicks a plant
 
 //        //Their input is used to then stored and sent to checkPrice()
@@ -55,10 +52,12 @@ public class farmerGame {
         public String checkPrice(String crop) {
                 curDay--;
                 if (crop.equals(sellPlant())){
+                        money += 100;
                         return ("The merchants at the market were looking to buy a bunch of " + crop + " so they gave you $100!");
                 }
 //                if (!crop.equals(sellPlant())){
                 else {
+                        money += 25;
                         return ("Sorry. The merchants at the market were not interested in buying much " + crop + " so they only gave you $25 :(");
                 }
         }
