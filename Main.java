@@ -50,14 +50,14 @@ public class Main {
         sWindow.setLocationRelativeTo(null);
 
         //player info
-        /* 
+        
         JPanel plyrInfo = new JPanel();
         sWindow.add(plyrInfo, BorderLayout.SOUTH);
         JButton healthB = new JButton("Health: "+ben.getHealth());
         JButton moneyB = new JButton("Money: "+ ben.getMoney());
         plyrInfo.add(moneyB);
         plyrInfo.add(healthB);
-*/
+
         //next button that triggers everything
         JButton text = new JButton();
         text.setText("Hello and welcome Farmer Ben. You are a Farmer and as such you must do farmer things ...");
@@ -70,10 +70,14 @@ public class Main {
                 if(curProgess ==12){
                     //run nathan's game
                     new buttonPanel(5, ben, next);
+                }else if (curProgess == 13){
+                    moneyB.setText("Money: "+ ben.getMoney());
                 }else if(curProgess ==16){
                     //run blanche's game
                     ButtonGrid1 bg1 = new ButtonGrid1 (3,3,next);//runs the light game
                     ButtonGrid2 bg2 = new ButtonGrid2(3,3,ben);//runs the memory games
+                }else if (curProgess==17){
+                    healthB.setText("Health: "+ben.getHealth());
                 }else if(curProgess ==22){
                     //run george's game
                     MazeWindow maze = new MazeWindow();
