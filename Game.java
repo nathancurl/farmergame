@@ -14,7 +14,8 @@ public class Game {
         //new Game();
     }
     public Game(Player player){
-        new Story(this, ui, vm, player);
+        Story story2 = new Story(this, ui, vm, player);
+        this.story = story2;
         ui.createUI(choiceHandler);
         story.defaultSetup();
         vm.showTitleScreen();

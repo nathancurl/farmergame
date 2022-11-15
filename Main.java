@@ -19,7 +19,7 @@ public class Main {
 
         //setup the frame
         JFrame sWindow = new JFrame("Farmer Ben Main Story");
-        sWindow.setSize(500,550);
+        sWindow.setSize(500,350);
         sWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         sWindow.setLocationRelativeTo(null);
 
