@@ -1,3 +1,4 @@
+package package01;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,11 +12,17 @@ public class Game {
     String nextPosition1, nextPosition2;
 
     public static void main(String[] args) {
-        //new Game();
+        //Player play = new Player();
+        //new Game(play);
     }
     public Game(Player player){
+<<<<<<< HEAD
         Story story2 = new Story(this, ui, vm, player);
         this.story = story2;
+=======
+        Story story2 =new Story(this, ui, vm, player);
+        story = story2;
+>>>>>>> 83e113d3a44407c303806a2ea00e1b4c923cc9cb
         ui.createUI(choiceHandler);
         story.defaultSetup();
         vm.showTitleScreen();

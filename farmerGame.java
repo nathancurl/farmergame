@@ -7,7 +7,7 @@ import java.util.Random;
 public class farmerGame {
         Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
         int curDay = 5;
-        int money;
+        //Player ben;
         String[] crops;{
                 crops = new String[3];
                 crops[0] = "Corn";
@@ -18,8 +18,9 @@ public class farmerGame {
 
         //    //Overarching questions: Should I make a data structure of some kind to store the player's money
 //    int money;
-        public void intializeGame() {
+        public void intializeGame(Player ben) {
                 JFrame console = new JFrame();
+                this.ben = ben;
                 console.setBounds(0, 1200, 900, 400);
                 console.setVisible(true);
 
@@ -49,15 +50,15 @@ public class farmerGame {
 //              //sends that choice to checkPrice()
         }
 
-        public String checkPrice(String crop) {
+        public String checkPrice(String crop, Player ben) {
                 curDay--;
                 if (crop.equals(sellPlant())){
-                        money += 100;
+                        ben.setMoney(ben.getMoney() + 100) ;
                         return ("The merchants at the market were looking to buy a bunch of " + crop + " so they gave you $100!");
                 }
 //                if (!crop.equals(sellPlant())){
                 else {
-                        money += 25;
+                        ben.setMoney(ben.getMoney() + 25) ;
                         return ("Sorry. The merchants at the market were not interested in buying much " + crop + " so they only gave you $25 :(");
                 }
         }
