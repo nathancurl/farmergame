@@ -16,12 +16,14 @@ public class ButtonGrid2 {
     MyButton2[] order;
 
     MyButton2[] current = new MyButton2[6];
+    Player ben;
 
     int currSpot = -1;
 
-    public ButtonGrid2(int width, int length) {
+    public ButtonGrid2(int width, int length, Player ben) {
         this.width = width;
         this.height = length;
+        this.ben = ben;
         this.order = new MyButton2 [6];
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
@@ -86,6 +88,7 @@ public class ButtonGrid2 {
                 b2.repaint();
             }
         }
+        bg.ben.health = 50;
         JLabel label = new JLabel("You Lose");
         label.setVisible(true);
         label.setFont(new Font("Serif", Font.PLAIN, 40));

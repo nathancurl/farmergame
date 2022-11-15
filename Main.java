@@ -1,98 +1,72 @@
-import java.util.Scanner;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
+    int curProgess;
+
+    String level1 = "farming game";
+    String level2 = " puzzel game";
+    String level3 = "click next to start maze game";
+    String level4 = "boss battle";
+    String end = " thanks for playing";
+
+    String[] story = {level1,level2,level3,level4,end};
+    public Main() {
+        Player ben = new Player();
+
+        //setup the frame
+        JFrame sWindow = new JFrame("Farmer Ben Main Story");
+        sWindow.setSize(500,550);
+        sWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        sWindow.setLocationRelativeTo(null);
+        JButton text = new JButton();
+        text.setText("Welcome");
+        sWindow.add(text, BorderLayout.CENTER);
+        JButton next = new JButton( "next");
+        next.addActionListener(new ActionListener() {
             @Override
-            public void run() {
+            public void actionPerformed(ActionEvent e) {
+                curProgess++;
+                if(curProgess ==2){
+                    //run nathan's game
 
-                //create a player that so all the games can have the same player
-                Player Ben = new Player();
+                    ben.setMoney(500); //use this to export the money from nathan's game
+                }else if(curProgess ==3){
+                    //run blanche's game
+                    ButtonGrid1 bg1 = new ButtonGrid1 (3,3,next);//runs the light game
+                    ButtonGrid2 bg2 = new ButtonGrid2(3,3,ben);//runs the memory game
+                }else if(curProgess ==4){
+                    //run george's game
+                    MazeWindow maze = new MazeWindow();
+                    maze.startMG(ben.getMoney(), next);
 
-                String loser = "I guess you don't love your son enough to save him. :(";
-                String user;
-                // start the storyline:
-                Scanner gameScanner = new Scanner(System.in);
-                
-                System.out.println("Hello and welcome Farmer Ben. You are a Farmer and as such you must do farmer things ...\n" +
-                 "Oh no. What's that over there? It's an alien!!!  Farmer Ben watch out, the Alien is kidnapping your son Milo\n " + 
-                "Farmer Ben, you need to go rescue your son. It is your mission.\n*type y to accept the MILO rescue misson and start level 1");
-                user = gameScanner.nextLine();
-                
-                if(!user.equals("y")){
-                    System.out.println(loser);
-                    System.exit(0);
+                }else if(curProgess ==5){
+                    //run prim's game
+                    Game boss = new Game(); 
+                    sWindow.dispose();
+
                 }
 
-                
-                System.out.println("We the game designers are so glad you decided to accept the mission. Only terrible parents would not rescue their child...\n" + 
-                "But first things first, you are gonna need a spaceship to follow the Alien. There is a used one for sale. It costs $10000000." +
-                 "You better start farming. Once you make enough money to buy the ship, you can move on. However, having a little extra cash in your pocket might be useful later. *hint hint*\n"+
-                "*type y to start farming");
-                user = gameScanner.nextLine();
-                if(!user.equals("y")){
-                    System.out.println(loser);
-                    System.exit(0);
-                }
 
-                    // run nathan's game.
-                
-                
-
-                System.out.println("Whelp, it looks like you bought a real lemon of a spaceship, this thing barely runs.\n You are gonna need to fix this puppy up if you're gonna rescue Milo in it. First, turn all the lights to green.\n Then follow the light pattern and you should be good to go!\n *type y to begin");
-
-                user = gameScanner.nextLine();
-                if(!user.equals("y")){
-                    System.out.println(loser);
-                    System.exit(0);
-                }
-                    // run Blacnche's puzzel games
-                
-                    //ButtonGrid1 bg1 = new ButtonGrid1 (3,3);//runs the light game
-                    //ButtonGrid2 bg2 = new ButtonGrid2(3,3);//runs the memory game
+                text.setText(story[curProgess-1]);
 
 
-                System.out.println("Nice work on those puzzles. It took you long enough. I bet those pesky aliens are torturing Milo.\n" +
-                "Now it's time to fly through the maze of space to find him. Your ships navigation is not working perfectly.\n" +
-                "If you have extra money it will increases you navigation system making the maze shorter. You money will automatically be applied to these upgrades.\n"+
-                "*type y to begin the navigation system.");
-
-                user = gameScanner.nextLine();
-                if(!user.equals("y")){
-                    System.out.println(loser);
-                    System.exit(0);
-                }
-
-                    //run George's game
-                   //MazeWindow game = new MazeWindow(); //runs the maze game
-                   //game.startMG(50);
-                   
-                   //somehow wait till maze things are finished before the next print starts
-                  
- /* */
-                System.out.println("You made it to the Alien's home. You must fight to get Milo back.\n" +
-                "Please use all of your wits and farming skills to defeat the boss! Good luck!\n" +
-                "*type y to start battle");
-
-                user = gameScanner.nextLine();
-                if(!user.equals("y")){
-                    System.out.println(loser);
-                    System.exit(0);
-                }
-            
-                        //run Prim's Game
-
-                
-                
-                System.out.println("Congrats! You saved Milo. Time to return home and live off your days happy.");
-/* */
-                gameScanner.close();
-
-                        
             }
+
+
         });
+
+        sWindow.add(next,BorderLayout.NORTH);
+
+        sWindow.setVisible(true);
+
+
+}
+
+    public static void main(String[] args) {
+        Main g = new Main();
     }
 }

@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
@@ -12,12 +12,14 @@ public class ButtonGrid1 {
     int height;
     JFrame frame = new JFrame();
     MyButton1[][] grid;
-
+    JButton button;
     boolean win = false;
 
-    public ButtonGrid1(int width, int length) {
+    public ButtonGrid1(int width, int length, JButton button) {
         this.width = width;
         this.height = length;
+        this.button = button;
+        button.setVisible(false);
         try{
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         }catch(Exception e){
@@ -70,12 +72,8 @@ public class ButtonGrid1 {
                 b2.repaint();
             }
         }
-        JLabel label = new JLabel("You Win!");
-        label.setVisible(true);
-        label.setFont(new Font("Serif", Font.PLAIN, 40));
-        label.setSize(200,100);
-        label.setOpaque(true);
-        bg.frame.add(label);
+        bg.frame.dispose();
+        bg.button.setVisible(true);
     }
 
     public static void main(String[] args) {

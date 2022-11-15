@@ -1,4 +1,7 @@
 import javax.swing.*;
+
+import org.w3c.dom.css.RGBColor;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -37,10 +40,13 @@ public class MazePanel extends JPanel {
     int endRow;
     int endCol;
 
-    public MazePanel(int[][] mazeRep) {
+    JButton btn;
+
+    public MazePanel(int[][] mazeRep, JButton btn) {
         this.mazeRep = mazeRep;
         this.xD = mazeRep[0].length;
         this.yD = mazeRep.length;
+        this.btn = btn;
 
     }
 
@@ -171,6 +177,7 @@ public class MazePanel extends JPanel {
 
 
     private void end(){
+        btn.setVisible(true);
         SwingUtilities.getWindowAncestor(this).dispose();
     }
 }

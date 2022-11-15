@@ -6,21 +6,20 @@ public class Story {
     Game game;
     UI ui;
     VisibilityManager vm;
-    Player player = new Player();
+    Player player;
     Boss boss = new Boss();
     Random rand = new Random();
 
-    public Story(Game g, UI userInterface, VisibilityManager vManager) {
+    public Story(Game g, UI userInterface, VisibilityManager vManager, Player p1) {
         game = g;
         ui = userInterface;
         vm = vManager;
+        player = p1;
 
     }
 
     public void defaultSetup() {
-        player.health = 100;
         ui.hpNumberLabel.setText("" + player.health);
-        boss.health = 100;
         ui.bossHPNumLabel.setText("" + boss.health);
 
     }
