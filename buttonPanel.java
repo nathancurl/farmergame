@@ -11,10 +11,13 @@ import static java.awt.Color.white;
 
 public class buttonPanel extends farmerGame {
     int curDay;
-    private int money;
-    buttonPanel(int curDay_) {
+    //Player ben = new Player();
+    JButton button = new JButton();
+    buttonPanel(int curDay_, Player ben, JButton button) {
         JFrame f = new JFrame("Pick your crop");
         curDay = curDay_;
+        this.button = button;
+        // set to visible after dispose window* button.setVisible(false);
         JTextArea dayCounter = new JTextArea(String.format("Current day: %d", curDay));
         dayCounter.setBounds(10, 1000, 200, 100);
         dayCounter.setBackground(black);
@@ -41,7 +44,7 @@ public class buttonPanel extends farmerGame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (curDay>0) {
-                    String a = checkPrice("Wheat");
+                    String a = checkPrice("Wheat", ben);
                     mainTextArea.setText(a);
                     curDay--;
                     dayCounter.setText(String.format("Current day: %d", curDay));
@@ -66,7 +69,7 @@ public class buttonPanel extends farmerGame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (curDay>0){
-                    String b = checkPrice("Corn");
+                    String b = checkPrice("Corn" , ben);
                     //System.out.print("Corn");
                     mainTextArea.setText(b);
                     curDay--;
@@ -92,7 +95,7 @@ public class buttonPanel extends farmerGame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (curDay>0){
-                    String c = checkPrice("Basil");
+                    String c = checkPrice("Basil", ben);
                     mainTextArea.setText(c);
                     curDay--;
                     dayCounter.setText(String.format("Current day: %d", curDay));
@@ -112,22 +115,19 @@ public class buttonPanel extends farmerGame {
         f.add(basilButton);
         f.add(Basil);
 
-        JButton finishButton = new JButton();
-        finishButton.setBounds(450, 900, 150, 100);
-        Textfield Finish;
-        Finish = new TextField("Finish");
-        Finish.setFont(normalFont);
-        Finish.setBounds(515,1100,150,50);
-        Finish.setBackground(black);
-        Finish.setBackground(white);
-        Finish.setText("Finish");
-        Finish.setEditable(false);
-        Finish.setVisible(true);
+        JButton finishButton = new JButton("Finish");
+        ActionListener actionListener3 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                f.dispose();
+                }
+        };
+        finishButton.setBounds(450, 950, 150, 100);
+        finishButton.setFont(normalFont);
         finishButton.setVisible(true);
+        finishButton.setBackground(black);
+        finishButton.addActionListener(actionListener3);
         f.add(finishButton);
-        f.add(Finish);
-
-
 
         f.setSize(600, 1400);
         f.setBounds(1200, 0, 600, 1400);
@@ -136,8 +136,5 @@ public class buttonPanel extends farmerGame {
         f.setForeground(black);
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    public static void main(String[] args) {
-        new buttonPanel(5);
     }
 }

@@ -43,8 +43,7 @@ public class Main {
                 curProgess++;
                 if(curProgess ==2){
                     //run nathan's game
-
-                    ben.setMoney(500); //use this to export the money from nathan's game
+                    new buttonPanel(5, ben, next);
                     moneyB.setText("Money:" + ben.getMoney());
                 }else if(curProgess ==3){
                     //run blanche's game
