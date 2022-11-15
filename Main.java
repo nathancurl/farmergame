@@ -54,6 +54,7 @@ public class Main {
                     //run george's game
                     MazeWindow maze = new MazeWindow();
                     maze.startMG(ben.getMoney(), next);
+                    //maze.startMG(5, next);
 
                 }else if(curProgess ==5){
                     //run prim's game
