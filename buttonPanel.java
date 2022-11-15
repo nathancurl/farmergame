@@ -18,7 +18,7 @@ public class buttonPanel extends farmerGame {
         curDay = curDay_;
         this.button = button;
         // set to visible after dispose window* button.setVisible(false);
-        JTextArea dayCounter = new JTextArea(String.format("Current day: %d", curDay));
+        JTextArea dayCounter = new JTextArea(String.format("Days remaining: %d", curDay));
         dayCounter.setBounds(10, 1000, 200, 100);
         dayCounter.setBackground(black);
         dayCounter.setForeground(white);
@@ -36,7 +36,7 @@ public class buttonPanel extends farmerGame {
         mainTextArea.setWrapStyleWord(true);
         mainTextArea.setEditable(false);
         f.add(mainTextArea);
-        mainTextArea.setText("Hello and welcome to the first mini-game of our Final Project. \n Good luck selling your crops! ");
+        mainTextArea.setText("Hello and welcome to the market. \n Good luck selling your crops! ");
 //        f.validate();
 //        f.repaint();
         JButton wheatButton = new JButton(new ImageIcon("wheat.jpg"));
